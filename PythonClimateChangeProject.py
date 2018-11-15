@@ -16,9 +16,8 @@ def run_timer(seconds):
         time.sleep(1)
     sys.stdout.write(" you died")
 
-run_timer(120) #this timer should run while the questions are prompted, and is
+# run_timer(120) #this timer should run while the questions are prompted, and is
                #the main asset of the game
-
 class Question:
     def __init__(self, question, answer):
         self.question = question
@@ -35,6 +34,8 @@ class Question:
             print "incorrect!"
 
 question1 = Question("You're at the supermarket buying groceries. The cashier asks if you would like a plastic bag for your products. Do you say yes or no?", "no")
+question1.ask_question() #this calls the questions into the terminal
+run_timer(120)
 question2 = Question("You're brushing your teeth. Do you leave the water on while brishing?", "no")
 question3 = Question("Do you buy water bottles?", "no")
 # these questions all have relevance to climate change
