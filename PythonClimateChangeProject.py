@@ -28,7 +28,7 @@ class Question:
         print self.question
         your_answer = raw_input("answer: ")
 
-        if your_answer = self.answer:
+        if your_answer == self.answer:
             print "correct!"
 
         else:
