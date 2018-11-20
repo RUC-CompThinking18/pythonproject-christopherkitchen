@@ -1,5 +1,7 @@
-import time
-import sys
+import time #this allows us to, quite literally, use time.
+import sys #this allows us to use sys.stdout, which works with printing things to the terminal.
+
+#import schedule #this allows the next question to be asked after a certain amount of time
 
 def run_timer(seconds):
     for remaining in range(seconds, 0, -1):
@@ -12,13 +14,16 @@ def run_timer(seconds):
         else:
             seconds = remaining
         sys.stdout.write("{:2d} minutes {:2d} seconds remaining.".format(minutes,seconds))
-        sys.stdout.flush()
+        sys.stdout.flush() #this will write everything in the buffer to the terminal
         time.sleep(1)
     sys.stdout.write(" you died")
 
 # run_timer(120) #this timer should run while the questions are prompted, and is
                #the main asset of the game
-class Question:
+raw_input("Climate change is a real problem we are facing, and our everyday decisions could make a big difference. There isn't much time left. (Press ENTER to make a difference.)")
+#this prompts the user with the issue, being climate change. then, they will see the questions.
+
+class Question: #this class houses the instances of the questions, and prompts them
     def __init__(self, question, answer):
         self.question = question
         self.answer = answer
@@ -33,27 +38,16 @@ class Question:
         else:
             print "incorrect!"
 
+        #run_timer(120) #once the first question is answered, a timer starts. this is symbolic of the lack of time.
+
 question1 = Question("You're at the supermarket buying groceries. The cashier asks if you would like a plastic bag for your products. Do you say yes or no?", "no")
-question1.ask_question() #this calls the questions into the terminal
-run_timer(120)
-question2 = Question("You're brushing your teeth. Do you leave the water on while brishing?", "no")
+#run_timer(120)
+question2 = Question("You're brushing your teeth. Do you leave the water on while brushing?", "no")
 question3 = Question("Do you buy water bottles?", "no")
 # these questions all have relevance to climate change
+
 question1.ask_question() #this calls the questions into the terminal
+question2.ask_question()
+question3.ask_question()
 
-#def Game_Questions(): #would i define each question, or define a class of questions?
-#    print "You're at the supermarket buying groceries. The cashier asks if you would like a plastic bag for your products. Do you say yes or no?"
-
-#    your_answer = raw_input("answer: ")
-
-#    if your_answer == "yes":
-#		print "You're helping better the enviorment, you've added 30 seconds!"
-
-#	elif your_answer == "no":
-#		print "You're speeding up the end of mankind, you've subtracted 30 seconds."
-
-#    else:
-#        print "Please type 'yes' or 'no'."
-
-#i want to add a function that adds/minuses time from the timer based on correct
-#or incorrect answers
+#schedule.every(10).seconds.do(question1)
