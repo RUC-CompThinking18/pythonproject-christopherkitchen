@@ -46,8 +46,10 @@ question2 = Question("You're brushing your teeth. Do you leave the water on whil
 question3 = Question("Do you buy water bottles?", "no")
 # these questions all have relevance to climate change
 
+print time.time() #this will show how much time is left
 question1.ask_question() #this calls the questions into the terminal
+print time.time()
 question2.ask_question()
+print time.time()
 question3.ask_question()
-
-#schedule.every(10).seconds.do(question1)
+print time.time()
